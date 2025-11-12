@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Float-Based Web Layout</title>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; background-color: #f3f3f9;">
+
+    <!-- Header -->
+    <div style="background-color: #3b5998; color: white; text-align: center; padding: 20px;">
+        <h1 style="margin: 0;">Float-Based Web Layout</h1>
+    </div>
+
+    <!-- Navigation Bar -->
+    <div style="background-color: #607dca; overflow: hidden; text-align: center; padding: 10px 0;">
+        <a href="#" style="display: inline-block; background-color: #8ea6e0; color: white; text-decoration: none; 
+        padding: 10px 40px; margin: 5px; border-radius: 5px;">Home</a>
+        <a href="#" style="display: inline-block; background-color: #8ea6e0; color: white; text-decoration: none; 
+        padding: 10px 40px; margin: 5px; border-radius: 5px;">About</a>
+        <a href="#" style="display: inline-block; background-color: #8ea6e0; color: white; text-decoration: none; 
+        padding: 10px 40px; margin: 5px; border-radius: 5px;">Services</a>
+        <a href="#" style="display: inline-block; background-color: #8ea6e0; color: white; text-decoration: none; 
+        padding: 10px 40px; margin: 5px; border-radius: 5px;">Contact</a>
+    </div>
+
+    <!-- Sidebar -->
+    <div style="list-style: none; float: left; width: 20%; background-color: #d8ead0; padding: 20px; box-sizing: border-box; min-height: 350px;">
+        <ul>
+            <li>i>Sidebar</li>
+        <li>Menu Item 1 </li>
+        <li>Menu Item 2</li>
+        <li>Menu Item 1 </li>
+        <li>Menu Item 2</li>
+        <li>Menu Item 1 </li>
+        <li>Menu Item 2</li>
+        
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div style="float: right; width: 75%; background-color: #f5f5f5; padding: 20px; box-sizing: border-box;">
+        <h2>Main Content Area</h2>
+        <p>This layout is created using CSS float properties. The sidebar is floated left, and the main content is floated right.</p>
+
+        <!-- Float Columns -->
+        <div style="float: left; width: 45%; background-color: #e8d4ec; padding: 10px; margin-right: 5%; box-sizing: border-box;">
+            <h3>Float Column 1</h3>
+            <p>This column is floated left. Float was commonly used for layouts before Flexbox and CSS Grid.</p>
+        </div>
+
+        <div style="float: left; width: 45%; background-color: #e8d4ec; padding: 10px; box-sizing: border-box;">
+            <h3>Float Column 2</h3>
+            <p>This column is also floated left. Using float for layout requires careful clearing of floats.</p>
+        </div>
+
+        <div style="clear: both;"></div>
+    </div>
+
+    <div style="clear: both;"></div>
+
+    <!-- About Float Layout Section -->
+    <div style="background-color: #f8e8b0; padding: 20px; margin-top: 10px;">
+        <h3 style="margin-top: 0;">About Float Layouts</h3>
+        <p>CSS float is a property that positions an element to the left or right of its container, allowing text and inline elements to wrap around it.</p>
+        <p>While float is still useful for wrapping text around images, it's no longer the preferred method for creating complex page layouts.</p>
+    </div>
+
+    <!-- Footer -->
+    <div style="background-color: #3b5998; color: white; text-align: center; padding: 10px;">
+        © 2023 Float Layout Example. All rights reserved.
+    </div>
+
+</body>
+</html>

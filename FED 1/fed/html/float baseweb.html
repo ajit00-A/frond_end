@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container" style="width: 1000px;height: auto;">
+        <div id="header" style="background-color: rgb(96, 169, 232);height: 150px;">
+            <h1 style="text-align: center;color: white;">Float Based Web Layout</h1>
+
+            <div id="nav" style="background-color: aqua; float: left;width: 80%; margin: 20px;text-align: center;">
+                <div
+                    style="background-color: rgb(171, 180, 195); float: left; margin: 10px;padding: 2px 10px; width: 20%;">
+                    home</div>
+                <div style="background-color: rgb(171, 180, 195);float: left;margin: 10px;padding: 2px 10px;width: 20%;">
+                    About</div>
+                <div style="background-color: rgb(171, 180, 195);float: left;margin: 10px;padding: 2px 10px;width: 20%;">
+                    services</div>
+                <div style="background-color: rgb(171, 180, 195);float: left;margin: 10px;padding: 2px 10px;width: 20%;">
+                    contact</div>
+            </div>
+        </div>
+        <div id="contact" style="clear: both;">
+            <div id="Sidebar"
+                style="background-color: rgb(201, 250, 184);float: left;height: 260px;width: 200px;margin:20px;">
+                <ul style="list-style: none;">
+                    <h1>Sidebar</h1>
+                    <li style="border-bottom: 1px solid black;">Menu item 1</li>
+                    <li style="border-bottom: 1px solid black;">Menu item 1</li>
+                    <li style="border-bottom: 1px solid black;">Menu item 1</li>
+                    <li style="border-bottom: 1px solid black;">Menu item 1</li>
+                    <li style="border-bottom: 1px solid black;">Menu item 1</li>
+                </ul>
+            </div>
+            <div id="maincontent"
+                style="background-color: rgb(255, 227, 218);float:left;height: 260px;width: 760px;margin-top:15px ;">
+                <h2>Main Content Area</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero eligendi blanditiis minus
+                    quibusdam et recusandae hic reiciendis vel est velit?</p>
+                <div id="float Column 1"
+                    style="background-color: rgb(216, 151, 151);height: 130px;width: 300px;float: left;">
+                    <h2>Float Column 1</h2>
+                    <p>This column is floatd left. Float was commonly used for layout before flexbox and css Grid.</p>
+                </div>
+                <div id="column 2"
+                    style="background-color: rgb(216, 151, 151); height: 120px;width: 300px;float: right;">
+                    <h2>Float Column 2</h2>
+                    <p>This column is also floated left. Using float for layout requies careful clearing of float.</p>
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+        <div id="About Float Layouts"
+            style="background-color: rgb(227, 135, 77);height: 150px;width: 1000px;float: left;">
+            <h2>About Float Layouts</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio nemo vitae incidunt sint,
+                nostrum doloremque facere iure impedit, nulla aut cum dicta labore hic suscipit, ad ipsum
+                tempora eius debitis.</p>
+        </div>
+
+
+
+
+        <div id="footer"
+            style="background-color: rgb(6, 78, 123);margin-top:20px ;float: left;width: 1000px;text-align: center;color: white;">
+            <p>@ 2023 Float Layout Example. All rigts reserved</p>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
