@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #header{
+          background-color: rgb(96, 169, 232);height: 150px;width: 1000px;
+           text-align: center;
+        }
+        #nav{
+            background-color: aqua; float: left;width: 80%; margin: 20px;text-align: center;
+        }
+        .button{
+            background-color: rgb(171, 180, 195); float: left; margin: 10px;padding: 2px 10px; width: 20%;
+        }
+        #contant{
+            background-color: rgb(201, 250, 184);float: left;height: 300px;width: 200px;margin:20px;}
+            .border{
+                border:1px solid rgba(0, 0, 0, 0.151);
+                width: 80%;
+            }
+            #maincontent{
+                background-color: rgb(241, 241, 247);float:left;height: 300px;width: 760px;margin-top:15px ;
+            }
+            #floatColumn1{
+                background-color: rgb(216, 151, 151);height: 130px;width: 300px;float: left;
+            }
+            #column2{
+                background-color: rgb(216, 151, 151); height: 120px;width: 300px;float: right;
+            }
+            #AboutFloatLayouts{
+                background-color: rgb(227, 135, 77);height: 150px;width: 1000px;float: left;margin-top:10px;margin-right:170px;
+            }
+            #footer{
+                background-color: rgb(6, 78, 123);margin-top:20px ;float: left;width: 1000px;text-align: center;color: white;
+            }
+           
+
+    </style>
+</head>
+
+<body>
+    
+        <div id="header">
+            <h1>Float Based Web Layout</h1>
+
+            <div id="nav">
+                <div class="button"> home</div>
+                <div class="button" >About</div>
+                <div class="button">services</div>
+                <div class="button">contact</div>
+            </div>
+        </div>
+            <div id="contant">
+                    <h3>Sidebar</h3>
+                    <p>Menu item 1</p>
+                    <div class="border"></div>
+                    <p>Menu item 1</p>
+                     <div class="border"></div>
+                    <p>Menu item 1</p>
+                     <div class="border"></div>
+                    <p >Menu item 1</p>
+                     <div class="border"></div>
+                    <p>Menu item 1</p>
+                
+            </div>
+            <div id="maincontent">
+                <h2>Main Content Area</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero eligendi blanditiis minus
+                    quibusdam et recusandae hic reiciendis vel est velit?</p>
+                <div id="floatColumn1">
+                    <h2>Float Column 1</h2>
+                    <p>This column is floatd left. Float was commonly used for layout before flexbox and css Grid.</p>
+                </div>
+                <div id="column2">
+                   
+                    <h2>Float Column 2</h2>
+                    <p>This column is also floated left. Using float for layout requies careful clearing of float.</p>
+                </div>
+
+
+            </div>
+
+        <div id="AboutFloatLayouts">
+            <h2>About Float Layouts</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio nemo vitae incidunt sint,
+                nostrum doloremque facere iure impedit, nulla aut cum dicta labore hic suscipit, ad ipsum
+                tempora eius debitis.</p>
+        </div>
+
+
+
+
+        <div id="footer">
+            <p>@ 2023 Float Layout Example. All rigts reserved</p>
+        </div>
+  
+
+
+</body>
+
+</html>

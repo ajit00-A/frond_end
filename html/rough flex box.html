@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YourBrand</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f6fb;
+            color: #333;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            background: #fff;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: #5a5ad6;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            background: linear-gradient(135deg, #6b6bd6, #7a6fdc);
+            color: #fff;
+            height: 420px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+        }
+
+        .hero p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .hero button {
+            align-self: center;
+            padding: 12px 28px;
+            border: none;
+            border-radius: 25px;
+            background: #fff;
+            color: #5a5ad6;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* ===== FEATURES ===== */
+        .features {
+            width: 1000px;
+            margin: 60px auto;
+            display: flex;
+            gap: 20px;
+        }
+
+        .feature-box {
+            background: #fff;
+            flex: 1;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .feature-box h3 {
+            color: #5a5ad6;
+            margin-bottom: 10px;
+        }
+
+        /* ===== ABOUT ===== */
+        .about {
+            width: 1000px;
+            margin: 60px auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .about h2 {
+            margin-bottom: 15px;
+        }
+
+        /* ===== CONTACT ===== */
+        .contact {
+            width: 1000px;
+            margin: 60px auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .contact h2 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 500px;
+            margin: auto;
+        }
+
+        .contact input,
+        .contact textarea {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact button {
+            width: 150px;
+            padding: 12px;
+            background: #5a5ad6;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #222;
+            color: #aaa;
+            text-align: center;
+            padding: 20px;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+
+<body> <!-- NAVBAR -->
+    <div class="navbar">
+        <div class="logo">YourBrand</div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Features</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+    </div> <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Something<br>Awesome</h1>
+            <p>A beautiful fixed-width website built with pure HTML & CSS.<br>No JavaScript. Just classic web.</p>
+            <button>Get Started</button>
+        </div>
+    </section> <!-- FEATURES -->
+    <section class="features">
+        <div class="feature-box">
+            <h3>Fast & Lightweight</h3>
+            <p>No media queries, no mobile menu, just pure design.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Pixel-Perfect Control</h3>
+            <p>Everything stays exactly where you put it.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Classic Web Feel</h3>
+            <p>Like old-school websites, but clean and modern.</p>
+        </div>
+    </section> <!-- ABOUT -->
+    <section class="about">
+        <h2>About This Non-Responsive Layout</h2>
+        <p>This layout is fixed at 1000px width and never adapts.
+            It is designed to demonstrate pure Flexbox alignment
+            without responsive breakpoints.</p>
+    </section> <!-- CONTACT -->
+    <section class="contact">
+        <h2>Get In Touch</h2>
+        <form>
+            <input type="text" placeholder="Your Name" />
+            <input type="email" placeholder="Your Email" />
+            <textarea rows="5" placeholder="Your Message"></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section> <!-- FOOTER -->
+    <footer>
+        © 2025 YourBrand. Proudly non-responsive since 2025.
+    </footer>
+</body>
+
+</html>
