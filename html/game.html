@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3D Car Driving Scene</title>
+  <style>
+    body { margin: 0; overflow: hidden; }
+
+    #controls {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      z-index: 10;
+    }
+
+    button {
+      padding: 12px 18px;
+      margin: 5px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="controls">
+  <button id="forward">⬆</button><br>
+  <button id="left">⬅</button>
+  <button id="backward">⬇</button>
+  <button id="right">➡</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+<script>
+  // Scene
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x87ceeb);
+
+  // Camera
+  const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+
+  // Renderer
+  const renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  document.body.appendChild(renderer.domElement);
+
+  // Light
+  const light = new THREE.DirectionalLight(0xffffff, 1);
+  light.position.set(5, 10, 5);
+  scene.add(light);
+
+  // Ground
+  const ground = new THREE.Mesh(
+    new THREE.PlaneGeometry(200, 200),
+    new THREE.MeshPhongMaterial({ color: 0x3a7d3a })
+  );
+  ground.rotation.x = -Math.PI / 2;
+  scene.add(ground);
+
+  // Road
+  const road = new THREE.Mesh(
+    new THREE.PlaneGeometry(10, 200),
+    new THREE.MeshPhongMaterial({ color: 0x222222 })
+  );
+  road.rotation.x = -Math.PI / 2;
+  road.position.y = 0.01;
+  scene.add(road);
+
+  // Lane line
+  const lane = new THREE.Mesh(
+    new THREE.PlaneGeometry(0.2, 200),
+    new THREE.MeshBasicMaterial({ color: 0xffffff })
+  );
+  lane.rotation.x = -Math.PI / 2;
+  lane.position.y = 0.02;
+  scene.add(lane);
+
+  // Car
+  const car = new THREE.Group();
+
+  const body = new THREE.Mesh(
+    new THREE.BoxGeometry(2, 0.5, 1),
+    new THREE.MeshPhongMaterial({ color: 0xff0000 })
+  );
+  body.position.y = 0.5;
+  car.add(body);
+
+  function createWheel(x, z) {
+    const wheel = new THREE.Mesh(
+      new THREE.CylinderGeometry(0.3, 0.3, 0.3, 32),
+      new THREE.MeshPhongMaterial({ color: 0x000000 })
+    );
+    wheel.rotation.z = Math.PI / 2;
+    wheel.position.set(x, 0.3, z);
+    car.add(wheel);
+    return wheel;
+  }
+
+  const wheels = [
+    createWheel(-0.8, 0.6),
+    createWheel(0.8, 0.6),
+    createWheel(-0.8, -0.6),
+    createWheel(0.8, -0.6)
+  ];
+
+  scene.add(car);
+
+  // Controls
+  let forward=false, backward=false, left=false, right=false;
+
+  function bindHold(id, onDown, onUp) {
+    const btn = document.getElementById(id);
+
+    btn.addEventListener("mousedown", onDown);
+    btn.addEventListener("mouseup", onUp);
+    btn.addEventListener("mouseleave", onUp);
+
+    btn.addEventListener("touchstart", (e)=>{ e.preventDefault(); onDown(); });
+    btn.addEventListener("touchend", (e)=>{ e.preventDefault(); onUp(); });
+  }
+
+  bindHold("forward", () => forward=true, () => forward=false);
+  bindHold("backward", () => backward=true, () => backward=false);
+  bindHold("left", () => left=true, () => left=false);
+  bindHold("right", () => right=true, () => right=false);
+
+  // Movement
+  let velocity = 0;
+  const acceleration = 0.002;
+  const maxSpeed = 0.2;
+
+  // Animation loop
+  function animate() {
+    requestAnimationFrame(animate);
+
+    if (forward) velocity += acceleration;
+    if (backward) velocity -= acceleration;
+
+    velocity = Math.max(-maxSpeed, Math.min(maxSpeed, velocity));
+    velocity *= 0.98;
+
+    car.position.x -= Math.sin(car.rotation.y) * velocity;
+    car.position.z -= Math.cos(car.rotation.y) * velocity;
+
+    if (left) car.rotation.y += 0.03;
+    if (right) car.rotation.y -= 0.03;
+
+    // Wheel rotation
+    wheels.forEach(w => w.rotation.x += velocity * 10);
+
+    // 🎥 Camera follow (chase view)
+    const offset = new THREE.Vector3(0, 3, 8);
+    const desiredPosition = offset.clone().applyMatrix4(car.matrixWorld);
+    camera.position.lerp(desiredPosition, 0.1);
+    camera.lookAt(car.position);
+
+    renderer.render(scene, camera);
+  }
+
+  animate();
+
+  // Resize
+  window.addEventListener("resize", () => {
+    camera.aspect = window.innerWidth/window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  });
+</script>
+
+</body>
+</html>

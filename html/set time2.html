@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="abc">start counting</button>
+
+    <button id="xyz">Stop</button>
+
+    <p id="counter">0</p>
+
+    <script>
+
+       let a;
+       let i = 0;
+
+       const pqrStart = document.getElementById("abc");
+
+       const stuStop = document.getElementById("xyz");
+
+       pqrStart.addEventListener("click",function(){
+        myInterval = setInterval(counter,2000);
+
+       });
+
+
+       stuStop.addEventListener("click", function(){
+        clearInterval(myInterval);
+
+
+       });
+
+       function counter(){
+        i++;
+
+        document.getElementById("counter").innerHTML = i;
+
+       }
+        
+       
+
+    </script>
+</body>
+</html>

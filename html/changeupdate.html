@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todochecklist</title>
+</head>
+<h2 style="text-align: center;">TODO LIST</h2>
+
+<body id="b">
+    <input type="text" id="a" placeholder="What needs to be done?"
+        style="height: 30px;width: 200px;margin: 10px; border-radius: 10px;">
+    <button onclick="myfunction()" id="btn"
+        style="background-color: blue;color: white; border-radius: 7px;height: 30px ;">add task</button>
+       <select name="text" id="filterselect" style="width: 100px;">
+        <option value="all">All</option>
+        <option value="Active">Active</option>
+        <option value="completed">completed</option>
+       </select>
+    <script>
+        function myfunction() {
+            const para = document.createElement("p");
+            const node = document.createTextNode(document.getElementById('a').value);
+            const check = document.createElement("input");
+            check.type = "checkbox";
+            para.appendChild(check);
+            para.appendChild(node);
+
+
+
+            const Btn = document.createElement("button");
+            Btn.innerText = "Delete";
+            
+            Btn.onclick = function () {
+                para.remove();
+
+            };
+
+            para.appendChild(Btn);
+
+            let element = document.getElementById('b');
+            element.appendChild(para);
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

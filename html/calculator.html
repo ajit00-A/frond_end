@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Celsius to Fahrenheit</title>
+    <style>
+        body {
+            background: #7cd2ee;
+
+        }
+
+        button:hover {
+            background: #ed9b9b;
+        }
+
+        button {
+            padding: 10px;
+            margin: auto;
+        }
+
+        input {
+            padding: 10px;
+            margin: 3px;
+            margin-top: 10px;
+            border-radius: 10px;
+
+            border: 1px solid white;
+
+        }
+    </style>
+
+</head>
+
+<body style=" margin-left:320px;">
+    <h1>Celsius to Fahrenheit</h1>
+
+    <div
+        style="text-align: center; margin-top:100px; background-color: #d19b9b; height: 118px; width:400px; border-radius: 4px;">
+
+        <input id="a" type="text" placeholder="Enter the Celsius">
+        <input id="b" type="text" placeholder="Fahrenheit">
+        <br>
+        <br>
+
+        <button onclick="ctf()">Click</button>
+        <button onclick="ctf()">Click</button>
+    </div>
+
+
+    <script>
+        let x = document.getElementById("a");
+        let y = document.getElementById("b");
+
+        function ctf() {
+            let celsius = Number(x.value);
+            let fahrenheit = (celsius * 9 / 5) + 32;
+            y.value = fahrenheit;
+        }
+    </script>
+
+</body>
+
+</html>

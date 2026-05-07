@@ -1,11 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=<>, initial-scale=1.0">
-    <title>Document</title>
+  <title>Add & Delete Example</title>
 </head>
 <body>
-    <h1>paragraph</h1>
+
+  <h2>Item List</h2>
+
+  <input type="text" id="itemInput" placeholder="Enter item">
+  <button onclick="addItem()">Add</button>
+
+  <ul id="itemList"></ul>
+
+  <script>
+    function addItem() {
+      let input = document.getElementById("itemInput");
+      let value = input.value.trim();
+
+      if (value === "") {
+        alert("Plz enter!");
+        return;
+      }
+
+      let li = document.createElement("li");
+      li.textContent = value;
+
+      // Create delete button
+      let delBtn = document.createElement("button");
+      delBtn.textContent = "Delete";
+      delBtn.style.marginLeft = "10px";
+
+      delBtn.onclick = function () {
+        li.remove();
+      };
+
+      li.appendChild(delBtn);
+      document.getElementById("itemList").appendChild(li);
+
+      input.value = "";
+    }
+  </script>
+
 </body>
 </html>
